@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title>Dexus</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Ion Icon Fonts-->
+	<link rel="stylesheet" href="css/ionicons.min.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+    <style>
+        #colorlib-logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        #colorlib-logo img {
+            max-width: 100%;
+            height: auto;
+            width: 150px; /* Set your desired width */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Optional: Add a class to the container to limit its size */
+        .logo-container {
+            max-width: 150px; /* Ensure the container does not exceed a specific width */
+        }
+		
+    </style>
+
+	</head>
+	<body>
+		
+        <div class="colorlib-loader"></div>
+		<div id="page">
+			<nav class="colorlib-nav" role="navigation">
+				<div class="top-menu">
+					<div class="container">
+					<div class="row">
+						<div class="col-sm-7 col-md-9">
+							<div id="colorlib-logo"><a href="index.html"></a>
+								<img src="images/DexusLogo.png" alt="Dexus Logo">
+							</div>
+						</div>
+						<div class="col-sm-5 col-md-3">
+			<form action="#" class="search-wrap">
+			<div class="form-group">
+			<input type="search" class="form-control search" placeholder="Search">
+			<button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
+			</div>
+			</form>
+			</div>
+		</div>
+                <div class="row">
+                    <div class="col-sm-12 text-left menu-1">
+                        <ul>
+                            <li><a href="index.html">Store</a></li>
+                            <li class="active"><a href="signin.html">My Account</a></li>
+                            <li><a href="about.html">About us</a></li>
+                            <li><a href="contact.html">Contact us</a></li>
+                            <li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+        <section class="text-center">
+            <div id="app-container" class="d-flex justify-content-center align-items-center vh-100">
+                <div id="app" class="container bg-white p-4 rounded">
+                    <h2 class="text-center mb-4">Sign Up</h2>
+                    <form @submit.prevent="signUp">
+                        <div class="mb-3">
+                            <input type="text" v-model="name" placeholder="Name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" v-model="email" placeholder="Email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" v-model="password" placeholder="Password" class="form-control" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="password" v-model="confirmPassword" placeholder="Confirm Password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                    </form>
+                    <p class="mt-4 text-center">Already have an account? <a href="#" class="text-decoration-none">Sign in here</a></p>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+            <script>
+                new Vue({
+                    el: '#app',
+                    data: {
+                        name: '',
+                        email: '',
+                        password: '',
+                        confirmPassword: ''
+                    },
+                    methods: {
+                        signUp(event) {
+                            if (this.name.trim() === "" || this.email.trim() === "" || this.password.trim() === "" || this.confirmPassword.trim() === "") {
+                                alert("Please fill in all fields.");
+                                return;
+                            }
+                            if (this.password !== this.confirmPassword) {
+                                alert("Passwords do not match.");
+                                return;
+                            }
+                            alert("Sign up successful!");
+                            window.location.href = 'user-page.html';
+                            event.target.reset();
+                        }
+                    }
+                });
+            </script>
+    </section>
+    <footer id="colorlib-footer" role="contentinfo">
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col footer-col colorlib-widget">
+                    <h4>Dexus</h4>
+                    <p>where craftsmanship meets creativity</p>
+                    <p>
+                        <ul class="colorlib-social-icons">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-instagram"></i></a></li>							
+                        </ul>
+                    </p>
+            </div>
+                <div class="col footer-col colorlib-widget">
+                    <h4>Website</h4>
+                    <p>
+                        <ul class="colorlib-footer-links">
+                            <li><a href="index.html">Store</a></li>
+                            <li><a href="user-page.html">My Account</a></li>
+                            <li><a href="about.html">About us</a></li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col footer-col">
+                    <h4>Support</h4>
+                    <ul class="colorlib-footer-links">
+                        <li><a href="contact.html">Contact us</a></li>						
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p>
+                        <span>
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+                        </span> 
+                    </p>
+                </div>
+            </div>
+        </div>
+</footer>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
+</div>
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- popper -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap 4.1 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- jQuery easing -->
+<script src="js/jquery.easing.1.3.js"></script>
+<!-- Waypoints -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Flexslider -->
+<script src="js/jquery.flexslider-min.js"></script>
+<!-- Owl carousel -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- Magnific Popup -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<!-- Date Picker -->
+<script src="js/bootstrap-datepicker.js"></script>
+<!-- Stellar Parallax -->
+<script src="js/jquery.stellar.min.js"></script>
+<!-- Main -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
